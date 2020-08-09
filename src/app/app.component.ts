@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from, fromEvent } from 'rxjs';
+import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,10 @@ export class AppComponent implements OnInit {
   title = 'angular-class';
 
   ngOnInit(){
-    const asynArray = from([1,2,3,4,5,6]);
-    asynArray.subscribe(s => console.log('item', s));
+    
+  }
 
-    const mouseMovement = fromEvent(document, "mousemove");
-    mouseMovement.subscribe(s => console.log('event',s.clientX + ', ' + s.clientY));
+  onClickSaveChild(event){
+    console.log('EVENT CHILD:', event)
   }
 }
