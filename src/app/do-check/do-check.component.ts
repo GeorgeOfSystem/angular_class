@@ -16,10 +16,8 @@ import {
   <div style="border: 1px solid red;">
   <p>do-check works!</p>
   <p><input type="text" [value]="name" ></p>
-
   {{name}}
   <p> Destroy </p>
-  
   <button (click)="sw = false;">Change</button>
   </div>`
 })
