@@ -10,6 +10,7 @@ import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'angular-class';
   sw=true;
+  persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio']
   ngOnInit(){
     
   }
