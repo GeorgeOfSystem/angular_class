@@ -11,9 +11,11 @@ export class AppComponent implements OnInit {
   title = 'angular-class';
   sw=true;
   persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio']
+  
   aux = 3;
   auxColor = 'red';
-  
+  auxClass = true;
+
   ngOnInit(){
     
   }
