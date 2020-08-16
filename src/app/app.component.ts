@@ -10,12 +10,14 @@ import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'angular-class';
   sw=true;
-  persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio']
-  
+  persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio'];
+  numbers = [1,2,3,4,5,6,7,8,9,10];
   aux = 3;
   auxColor = 'red';
   auxClass = true;
   auxName = 'Nicole'
+  auxExponent : number = 1;
+  auxNumber: number = 1;
 
   people = [
     {

@@ -56,5 +56,11 @@ autos
 <p>PIPE UpperCase = {{ auxName | uppercase}}</p>
 <p>PIPE LowerCase = {{ auxName | lowercase }}</p>
 <p>PIPE Date = {{ "01/03/2000" |  date }}</p>
-
 <p>PIPE MyFirstPipe = {{ auxName | myFirstPipe }}</p>
+
+Value: <input type="text" [(ngModel)] = "auxNumber">
+Exponent: <input type="text" [(ngModel)] = "auxExponent">
+
+<p>Pure: {{numbers | pure}}</p>
+<p>Impure {{numbers | impure }}</p>
+<button (click)="numbers.push(4)">ADD</button>
