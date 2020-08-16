@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   aux = 3;
   auxColor = 'red';
   auxClass = true;
+  auxName = 'Nicole'
 
   people = [
     {

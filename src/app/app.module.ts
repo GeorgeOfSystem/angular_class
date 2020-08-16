@@ -9,6 +9,8 @@ import { PersonModule } from './myModules/components/person.module';
 import { ProductModule } from './myModules/components/products/product.module';
 import { AdminModule } from './myModules/admin/admin.module';
 import { UserModule } from './myModules/user/user.module';
+import { MyFirstPipePipe } from './myPipes/my-first-pipe.pipe';
+
 
 
 
@@ -16,7 +18,8 @@ import { UserModule } from './myModules/user/user.module';
   declarations: [
     AppComponent,
     TestComponent,
-    DoCheckComponent
+    DoCheckComponent,
+    MyFirstPipePipe
   ],
   imports: [
     BrowserModule,
