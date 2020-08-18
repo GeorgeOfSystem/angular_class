@@ -68,3 +68,8 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
 <div [appNgColor]="'green'" [secondColor]="'red'">
   Nicole
 </div>
+
+<button (click)= "name = 'Daniel'; lastname= 'Angle'" > 
+  Change name, 
+</button>
+<testPerson [name]="name" [lastname]="lastname"></testPerson>

@@ -1,30 +1,45 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, OnDestroy, SimpleChange } from '@angular/core';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  selector: 'testPerson',
+  template: `
+  <div style="border: 1px solid red;">
+  <p>Name: {{name}}</p>
+  <p>Lastname: {{lastname}}</p>
+  </div>`
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit,OnChanges,OnDestroy {
+  intermedearia:string;
+  @Input()
+    get name(){
+      return this.intermedearia;
+    }
+    set name( name : string ){
+      this.intermedearia = 'Muy buenos días ' + name +' Este es un set';
+    }
 
-  name : string = 'Nicole';
-  age : number = 20;
-  description : string = 'ocupation';
+  @Input() lastname:string;
 
-  @Output() saveEvent = new EventEmitter();
-
-  
 
   constructor() { 
 
   }
 
-  ngOnChanges(){
-    console.log('onChange');
+  ngOnInit() {
+    console.log('onInit', this.name);
   }
 
-  ngOnInit() {
-    console.log('onInit');
+  ngOnChanges(change : SimpleChange){
+    if(change && change.lastname && change.lastname.currentValue){
+      console.log("on change", change.lastname.currentValue);
+      const aux = 'AAAH dio´mio' + change.lastname.currentValue;
+      this.lastname = aux;
+    }
+  }
+
+
+  ngOnDestroy(){
+    console.log("on destroy")
   }
 
   onClickSave(){

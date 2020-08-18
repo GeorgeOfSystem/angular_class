@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
   auxExponent : number = 1;
   auxNumber: number = 1;
 
+  name = 'Nicole';
+  lastname = 'Arcienega';
+
   people = [
     {
       name: 'Nicole',
