@@ -13,6 +13,7 @@ import { MyFirstPipePipe } from './myPipes/my-first-pipe.pipe';
 import { ExponentialPipe } from './myPipes/exponential.pipe';
 import { PurePipe } from './myPipes/pure.pipe';
 import { ImpurePipe } from './myPipes/impure.pipe';
+import { NgColorDirective } from './myDirectives/ng-color.directive';
 
 
 
@@ -25,7 +26,8 @@ import { ImpurePipe } from './myPipes/impure.pipe';
     MyFirstPipePipe,
     ExponentialPipe,
     PurePipe,
-    ImpurePipe
+    ImpurePipe,
+    NgColorDirective
   ],
   imports: [
     BrowserModule,
