@@ -38,7 +38,6 @@ autos
 <div [class.test1]="auxClass">
   class Example
 </div>
--->
 
 <div *ngFor="let person of people">
   <div [ngStyle]="{'background': person.enable ? 'green' : 'red'}">
@@ -60,6 +59,7 @@ autos
 
 Value: <input type="text" [(ngModel)] = "auxNumber">
 Exponent: <input type="text" [(ngModel)] = "auxExponent">
+-->
 
 <p>Pure: {{numbers | pure}}</p>
 <p>Impure {{numbers | impure }}</p>
@@ -73,3 +73,7 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
   Change name, 
 </button>
 <testPerson [name]="name" [lastname]="lastname"></testPerson>
+
+<div style="border: 1px solid green;" (appNgFocus)="name = 'htmlNgFocusTest'">
+  {{name}}
+</div>

@@ -8,6 +8,7 @@ import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  name = 'Nicole';
   title = 'angular-class';
   sw=true;
   persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio'];
@@ -19,7 +20,6 @@ export class AppComponent implements OnInit {
   auxExponent : number = 1;
   auxNumber: number = 1;
 
-  name = 'Nicole';
   lastname = 'Arcienega';
 
   people = [

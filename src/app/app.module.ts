@@ -14,6 +14,7 @@ import { ExponentialPipe } from './myPipes/exponential.pipe';
 import { PurePipe } from './myPipes/pure.pipe';
 import { ImpurePipe } from './myPipes/impure.pipe';
 import { NgColorDirective } from './myDirectives/ng-color.directive';
+import { NgFocusDirective } from './myDirectives/ng-focus.directive';
 
 
 
@@ -27,7 +28,8 @@ import { NgColorDirective } from './myDirectives/ng-color.directive';
     ExponentialPipe,
     PurePipe,
     ImpurePipe,
-    NgColorDirective
+    NgColorDirective,
+    NgFocusDirective
   ],
   imports: [
     BrowserModule,
