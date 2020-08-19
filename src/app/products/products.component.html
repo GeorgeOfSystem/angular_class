@@ -1,11 +1,11 @@
-<div *ngIf="stock!=0" style="border: 1px solid orange;">
+<div *ngIf="stock!=0" [ngStyle]="{'background':'orange'}">
   <p>Nombre:{{name | uppercase}}</p>
   <p>Talla:{{size | size}}</p>
   <p>Stock:{{stock}}</p>
-  <button (click)="buy()">Comprar</button>
+  <button [ngStyle]="{'background':'skyblue'}" (click)="buy()">Comprar</button>
 </div>
 
-<div *ngIf="stock==0" style="border: 1px solid red;">
+<div *ngIf="stock==0" [ngStyle]="{'background':'red'}">
   <p>Nombre:{{name | uppercase}}</p>
   <p>Talla:{{size | size}}</p>
   <p>Stock:{{stock}}</p>
