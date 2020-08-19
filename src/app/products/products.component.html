@@ -1,0 +1,12 @@
+<div *ngIf="stock!=0" style="border: 1px solid orange;">
+  <p>Nombre:{{name | uppercase}}</p>
+  <p>Talla:{{size | size}}</p>
+  <p>Stock:{{stock}}</p>
+  <button (click)="buy()">Comprar</button>
+</div>
+
+<div *ngIf="stock==0" style="border: 1px solid red;">
+  <p>Nombre:{{name | uppercase}}</p>
+  <p>Talla:{{size | size}}</p>
+  <p>Stock:{{stock}}</p>
+</div>
