@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   buy(product){
     if(product.stock!=0){
       product.stock--;
+      this.stock--;
     }
-    this.stock--;
   }
 }

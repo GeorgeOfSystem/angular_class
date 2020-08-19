@@ -19,6 +19,6 @@ export class ProductsComponent implements OnInit {
   }
 
   buy(){
-    this.buyButton.emit([])
+    this.buyButton.emit('');
   }
 }
