@@ -6,7 +6,7 @@ import { EventEmitter } from 'events';
 })
 export class NgFocusDirective {
 
-  @Output() appNgFocus = new EventEmitter();
+  @Output() appNgFocus1 = new EventEmitter();
   
   @HostListener('document:click', ['$event', '$event.target']) clickOutside(event, eventTarget){
     console.log('NgFocusDirective Test',this.el.nativeElement.contains(eventTarget))
@@ -14,7 +14,7 @@ export class NgFocusDirective {
     const aux = this.el.nativeElement.contains(eventTarget);
 
     if(!aux){
-      this.appNgFocus.emit('se hizo click afuera')
+      this.appNgFocus1.emit('se hizo click afuera')
     }
   }
 

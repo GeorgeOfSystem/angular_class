@@ -69,11 +69,8 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
   Nicole
 </div>
 
-<button (click)= "name = 'Daniel'; lastname= 'Angle'" > 
-  Change name, 
-</button>
-<testPerson [name]="name" [lastname]="lastname"></testPerson>
 
-<div style="border: 1px solid green;" (appNgFocus)="name = 'htmlNgFocusTest'">
-  {{name}}
-</div>
+<div style="border: 1px solid green;" 
+    (appNgFocus)="ngFocusDirective($event)">
+{{name}}
+ </div>

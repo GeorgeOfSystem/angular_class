@@ -48,6 +48,10 @@ export class AppComponent implements OnInit {
       enable: false
     }
   ]
+  
+  ngFocusDirective(event){
+    console.log('EVENTO DIERCGIVE:', event)
+  }
 
   ngOnInit(){
     
