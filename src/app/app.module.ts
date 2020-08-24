@@ -15,13 +15,15 @@ import { PurePipe } from './myPipes/pure.pipe';
 import { ImpurePipe } from './myPipes/impure.pipe';
 import { NgColorDirective } from './myDirectives/ng-color.directive';
 import { NgFocusDirective } from './myDirectives/ng-focus.directive';
+import { HomeComponent } from './myComponents/home/home.component';
+import { AboutComponent } from './myComponents/about/about.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    /*AppComponent,
     TestComponent,
     DoCheckComponent,
     MyFirstPipePipe,
@@ -29,7 +31,9 @@ import { NgFocusDirective } from './myDirectives/ng-focus.directive';
     PurePipe,
     ImpurePipe,
     NgColorDirective,
-    NgFocusDirective
+    NgFocusDirective,*/
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  name = 'Nicole';
+  /*name = 'Nicole';
   title = 'angular-class';
   sw=true;
   persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio'];
@@ -48,16 +48,16 @@ export class AppComponent implements OnInit {
       enable: false
     }
   ]
-  
+
   ngFocusDirective(event){
     console.log('EVENTO DIERCGIVE:', event)
   }
 
-  ngOnInit(){
-    
-  }
-
   onClickSaveChild(event){
     console.log('EVENT CHILD:', event)
-  }
+  }*/
+
+  ngOnInit():void{
+
+   }
 }

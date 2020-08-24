@@ -21,7 +21,7 @@ export class TestComponent implements OnInit,OnChanges,OnDestroy {
   @Input() lastname:string;
 
 
-  constructor() { 
+  constructor() {
 
   }
 
@@ -43,7 +43,7 @@ export class TestComponent implements OnInit,OnChanges,OnDestroy {
   }
 
   onClickSave(){
-    this.saveEvent.emit({
+   this.saveEvent.emit({
       name: this.name,
       age: this.age,
       description: this.description,
