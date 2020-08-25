@@ -1,12 +1,8 @@
 <p> Jorge López </p>
 
 <!--
-<app-test
-  (saveEvent)="onClickSaveChild($event)">
-</app-test>
-<app-do-check>
-  <input
-</app-do-check>
+<app-test(saveEvent)="onClickSaveChild($event)"></app-test>
+<app-do-check><input</app-do-check>
 
 <p>Ng For</p>
 <div *ngFor="let person of persons; let i = index">
@@ -75,4 +71,7 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
  </div>
 -->
 <p> Routing </p>
+<div style="border: 1px solid green">
+  <router-outlet></router-outlet>
+</div>
 
