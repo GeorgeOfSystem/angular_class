@@ -19,7 +19,10 @@ import { AdminComponent } from './myComponents/admin/admin.component';
 import { AppRouting } from './app.routing';
 import { Home1Component } from './myComponents/home1/home1.component';
 import { Home2Component } from './myComponents/home2/home2.component';
-import { NgModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,12 @@ import { NgModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRouting,
-    NgModule
+    NgbModule,
+    MatSliderModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

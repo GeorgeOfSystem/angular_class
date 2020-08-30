@@ -71,10 +71,28 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
  </div>
 -->
 <p> Routing </p>
+<button type="button" class="btn btn-danger">Danger</button>
 <button routerLink="home"> Home </button>
 <button routerLink="admin"> Admin </button>
 <button routerLink="about"> About </button>
 <button routerLink="user"> User </button>
+
+<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+
+<div class="btn-group btn-group-toggle">
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton > Left (pre-checked)
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton > Middle
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton> Right
+  </label>
+</div>
 
 <div style="border: 1px solid green">
   <router-outlet></router-outlet>
