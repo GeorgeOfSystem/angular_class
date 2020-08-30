@@ -19,6 +19,7 @@ import { AdminComponent } from './myComponents/admin/admin.component';
 import { AppRouting } from './app.routing';
 import { Home1Component } from './myComponents/home1/home1.component';
 import { Home2Component } from './myComponents/home2/home2.component';
+import { NgModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { Home2Component } from './myComponents/home2/home2.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRouting
+    AppRouting,
+    NgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
