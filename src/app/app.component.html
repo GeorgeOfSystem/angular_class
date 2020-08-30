@@ -1,84 +1,13 @@
-<p> Jorge López </p>
-
-<!--
-<app-test(saveEvent)="onClickSaveChild($event)"></app-test>
-<app-do-check><input</app-do-check>
-
-<p>Ng For</p>
-<div *ngFor="let person of persons; let i = index">
-  <p>{{i}}.- {{person}}</p>
-</div>
-
-<div [ngSwitch]="aux">
-  <p *ngSwitchCase="3">el valor es 3</p>
-  <p *ngSwitchCase="2">el valor es 2</p>
-  <p *ngSwitchDefault>No es ni 3 ni 2</p>
-</div>
-
-<button (click)="auxColor = 'yellow'">amarillo</button>
-<button (click)="auxColor = 'green'">verde</button>
-<button (click)="auxColor = 'red'">rojo</button>
-<div [ngStyle]="{'border': '1px solid ' + auxColor, 'color': auxColor}">
-  personas
-</div>
-
-<div [style.color]="auxColor">
-autos
-</div>
-
-<button (click)="auxClass = !auxClass"> Change Class </button>
-<div [ngClass]="{ 'test1': auxClass , 'test2': !auxClass}">
-  ng Class Example
-</div>
-
-<div [class.test1]="auxClass">
-  class Example
-</div>
-
-<div *ngFor="let person of people">
-  <div [ngStyle]="{'background': person.enable ? 'green' : 'red'}">
-    <person [name]="person.name"
-           [lastName]="person.lastName"
-           [age]="person.age"
-           [enable]="person.enable">
-   </person>
-  </div>
-</div>
-
-<admi1></admi1>
-
-<p>PIPE Json = {{persons | json}}</p>
-<p>PIPE UpperCase = {{ auxName | uppercase}}</p>
-<p>PIPE LowerCase = {{ auxName | lowercase }}</p>
-<p>PIPE Date = {{ "01/03/2000" |  date }}</p>
-<p>PIPE MyFirstPipe = {{ auxName | myFirstPipe }}</p>
-
-Value: <input type="text" [(ngModel)] = "auxNumber">
-Exponent: <input type="text" [(ngModel)] = "auxExponent">
-
-<p>Pure: {{numbers | pure}}</p>
-<p>Impure {{numbers | impure }}</p>
-<button (click)="numbers.push(4)">ADD</button>
-
-<div [appNgColor]="'green'" [secondColor]="'red'">
-  Nicole
-</div>
-
-
-<div style="border: 1px solid green;"
-    (appNgFocus)="ngFocusDirective($event)">
-{{name}}
- </div>
--->
-<p> Routing </p>
+<p>ROUTING</p>
 <button type="button" class="btn btn-danger">Danger</button>
-<button routerLink="home"> Home </button>
-<button routerLink="admin"> Admin </button>
-<button routerLink="about"> About </button>
-<button routerLink="user"> User </button>
+
+<button routerLink="home">HOME</button>
+<button routerLink="about">ABOUT</button>
+<button routerLink="admin">ADMIN</button>
+<button routerLink="user">USER</button>
+
 
 <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-
 <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
 
@@ -94,8 +23,27 @@ Exponent: <input type="text" [(ngModel)] = "auxExponent">
   </label>
 </div>
 
-<div style="border: 1px solid green">
-  <router-outlet></router-outlet>
 
+<div style="border: 4px solid red;">
+  <router-outlet>
+  </router-outlet>
 </div>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"> GulaAPP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">List</a>
+      </li>
+    </ul>
+  </div>
+</nav>

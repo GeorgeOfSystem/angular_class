@@ -8,56 +8,8 @@ import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  /*name = 'Nicole';
-  title = 'angular-class';
-  sw=true;
-  persons = ['Nicole', 'Jorge', 'Daniela', 'Ignacio'];
-  numbers = [1,2,3,4,5,6,7,8,9,10];
-  aux = 3;
-  auxColor = 'red';
-  auxClass = true;
-  auxName = 'Nicole'
-  auxExponent : number = 1;
-  auxNumber: number = 1;
-
-  lastname = 'Arcienega';
-
-  people = [
-    {
-      name: 'Nicole',
-      lastName: 'Arcienega',
-      age: 20,
-      enable: true
-    },
-    {
-      name: 'Daniela',
-      lastName: 'Angles',
-      age: 19,
-      enable: false
-    },
-    {
-      name: 'Jorge',
-      lastName: 'López',
-      age: 20,
-      enable: true
-    },
-    {
-      name: 'Ignacio',
-      lastName: 'Rojas',
-      age: 21,
-      enable: false
-    }
-  ]
-
-  ngFocusDirective(event){
-    console.log('EVENTO DIERCGIVE:', event)
-  }
-
-  onClickSaveChild(event){
-    console.log('EVENT CHILD:', event)
-  }*/
-
+  
   ngOnInit():void{
-
-   }
+    
+  }
 }
