@@ -1,42 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn:'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http : HttpClient) {
 
-  getProducts():any{
-    return [
-    {
-      description: 'Salteñas de las potosinas',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      ownerId: 1,
-      price: 12,
-      title: 'salteñas'
-    },
-    {
-      description: 'Salteñas de las SuperSalteñas',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      ownerId: 1,
-      price: 12,
-      title: 'salteñas'
-    },
-    {
-      description: 'Salteñas de las Castores',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      ownerId: 1,
-      price: 12,
-      title: 'salteñas'
-    },
-    {
-      description: 'Salteñas de las Paceñas',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      ownerId: 1,
-      price: 12,
-      title: 'salteñas'
-    }
-  ];
+   }
+
+  getProducts(): Observable<any>{
+    return this.http.get('https://upb-angularcertificationii.firebaseio.com/products.json');
   }
 }
