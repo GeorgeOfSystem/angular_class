@@ -1,1 +1,14 @@
 <p>admin works!</p>
+
+<!--
+<input type="text" [formControl]="nameControl">
+<button (click)="onSend()">enviar</button> 
+-->
+<form [formGroup]="productForm" style="display: flex; flex-direction: column">
+  <input formControlName="description" type="tect">
+  <input formControlName="imageUrl" type="tect">
+  <input formControlName="ownerId" type="tect">
+  <input formControlName="price" type="tect">
+  <input formControlName="tittle" type="tect">
+</form>
+<button (click)="onSend2()">enviar2</button>
