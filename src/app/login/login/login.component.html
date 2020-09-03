@@ -1,6 +1,7 @@
 <<p>login works!</p>
+<!--
 <button routerLink="/pages">LOGIN</button>
-<!--Example 1
+Example 1
 <div type="display: flex; flex-direction: column;">
     <input type="text" [(ngModel)]='userName' >
     <input type="password" [(ngModel)]='password' >
@@ -16,7 +17,7 @@ Exaple2
   </form>
 </div>
 <button (click)="onLogin2(loginForm)">GIN</button>
--->
+
 Example 3
 <div type="display: flex; flex-direction: column;">
   <form (ngSubmit)="onLogin2(loginForm)" #loginForm="ngForm">
@@ -25,7 +26,20 @@ Example 3
     <button type="submit"> Enviar </button>
   </form>
 </div>
+-->
 
+<input class="form-control" type="text" required ngModel #name="ngModel" minlength="3" maxlength="5" >
+<div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert alert-danger">
+  <div *ngIf="name.errors.required">
+    Name is requiered
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Error on the minium length of the word
+  </div>
+</div>
+
+
+<!--
 <div #test   class="class1 class2" id="test2">HOLA</div>
 
 
@@ -38,3 +52,4 @@ Example 3
 </ng-template> 
 
 <p *ngElse="sw">SE MUESTRA SI ES FALSO</p>
+-->
