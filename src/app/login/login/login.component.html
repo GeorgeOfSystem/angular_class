@@ -1,10 +1,30 @@
 <<p>login works!</p>
-
-
 <button routerLink="/pages">LOGIN</button>
+<!--Example 1
+<div type="display: flex; flex-direction: column;">
+    <input type="text" [(ngModel)]='userName' >
+    <input type="password" [(ngModel)]='password' >
+</div>
+<button (click)="onLogin()">GIN</button>
 
 
-
+Exaple2
+<div type="display: flex; flex-direction: column;">
+  <form #loginForm="ngForm">
+    <input type="text" name="userName" ngModel>
+    <input type="password" name="password" ngModel>
+  </form>
+</div>
+<button (click)="onLogin2(loginForm)">GIN</button>
+-->
+Example 3
+<div type="display: flex; flex-direction: column;">
+  <form (ngSubmit)="onLogin2(loginForm)" #loginForm="ngForm">
+    <input type="text" name="userName" ngModel>
+    <input type="password" name="password" ngModel>
+    <button type="submit"> Enviar </button>
+  </form>
+</div>
 
 <div #test   class="class1 class2" id="test2">HOLA</div>
 

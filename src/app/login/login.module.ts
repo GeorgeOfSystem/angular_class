@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login/login.component';
 import { myNgElseDirective } from '../myDirectives/ng-else.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,6 +14,8 @@ import { myNgElseDirective } from '../myDirectives/ng-else.directive';
     myNgElseDirective
   ],
   imports: [
+    FormsModule,//formularios de template
+    //ReactiveFormsModule,//formularios reactivos
     CommonModule,
     LoginRoutingModule
   ]

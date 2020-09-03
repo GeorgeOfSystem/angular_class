@@ -6,12 +6,29 @@ import { Observable } from 'rxjs';
   providedIn:'root'
 })
 export class ProductService {
+  address : string = 'https://upb-angularcertificationii.firebaseio.com/products.json';
 
   constructor(private http : HttpClient) {
-
+    
    }
+  
+  /*Create Product
+  postProducts( product : any ) : Observable<any> {
+    return this.http.post(this.address,product);
+  }*/
 
-  getProducts(): Observable<any>{
-    return this.http.get('https://upb-angularcertificationii.firebaseio.com/products.json');
+  //Read Product
+  getProducts() : Observable<any>{
+    return this.http.get(this.address);
   }
+
+  /*//Update Product
+  updateProducts( product : any ) : Observable<any> {
+    return this.http.put(this.address,product);
+  }
+
+  //Delete Product
+  deleteProducts( product : any ) : Observable<any> {
+    return this.http.delete(this.address,product);
+  }*/
 }
