@@ -12,23 +12,19 @@ export class ProductService {
 
    }
   
-  //Create Product
-  postProducts( product : any ) : Observable<any> {
-    return this.http.post(this.address,product);
-  }*
-
-  //Read Product
-  getProducts() : Observable<any>{
+  public getProducts(): Observable<any> {
     return this.http.get(this.address);
   }
 
-  /*//Update Product
-  updateProducts( product : any ) : Observable<any> {
-    return this.http.put(this.address,product);
+  public addProduct(product: any): Observable<any> {
+    return this.http.post(this.address, product);
   }
 
-  //Delete Product
-  deleteProducts( product : any ) : Observable<any> {
-    return this.http.delete(this.address,product);
-  }*/
+  public deleteProduct(id: any): Observable<any> {
+    return this.http.delete(`https://upb-angularcertificationii.firebaseio.com/products/${id}.json`);
+  }
+
+  public updateProduct(id: any, product: any): Observable<any> {
+    return this.http.put(`https://upb-angularcertificationii.firebaseio.com/products/${id}.json`, product);
+  }
 }

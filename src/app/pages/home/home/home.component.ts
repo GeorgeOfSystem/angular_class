@@ -1,24 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from '../../../myServices/product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy{
 
-  products = [];
+   products = [];
 
+  productSubs: Subscription;
 
-  constructor( private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+
+  }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(res =>{
-      console.log('respuesta',res);
-      console.log('respuesta', Object.entries(res));
-      Object.entries(res).map(p => this.products.push(p[1]) )
+
+   this.productSubs = this.productService.getProducts().subscribe(res => {
+      console.log('RESPUESTA: ', res);
+      console.log('RESPUESTA: ', Object.entries(res));
+
+      Object.entries(res).map(p => this.products.push(p[1]));
+
     });
+
+  }
+
+  ngOnDestroy(): void {
+    this.productSubs ? this.productSubs.unsubscribe() : '';
   }
 
 }
