@@ -6,6 +6,14 @@
 -->
 <form [formGroup]="productForm" style="display: flex; flex-direction: column">
   <input formControlName="description" type="tect">
+  <div *ngIf="productForm.get('description').invalid && (productForm.get('description').touched || productForm.get('description').dirty)" class="alert alert-danger">
+    <div *ngIf="productForm.get('description').errors.required">
+      Description is requiered
+    </div>
+    <div *ngIf="productForm.get('description').errors.minlength">
+      Error on the minium length of the word
+    </div>
+  </div>
   <input formControlName="imageUrl" type="tect">
   <input formControlName="ownerId" type="tect">
   <input formControlName="price" type="tect">

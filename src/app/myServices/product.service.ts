@@ -9,13 +9,13 @@ export class ProductService {
   address : string = 'https://upb-angularcertificationii.firebaseio.com/products.json';
 
   constructor(private http : HttpClient) {
-    
+
    }
   
-  /*Create Product
+  //Create Product
   postProducts( product : any ) : Observable<any> {
     return this.http.post(this.address,product);
-  }*/
+  }*
 
   //Read Product
   getProducts() : Observable<any>{

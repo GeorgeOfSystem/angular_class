@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ProductService } from '../../../myServices/product.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,11 +13,13 @@ export class AdminComponent implements OnInit {
 
   //nameControl = new FormControl();
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private productService : ProductService) { 
+
+   }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      description: '',
+      description: ['description',[ Validators.required, Validators.minLength(3) ]],
       imageUrl: '',
       ownerId: '',
       price: '',
@@ -31,5 +34,8 @@ export class AdminComponent implements OnInit {
   */
   onSend2(){
     console.log('Form group', this.productForm.value);
+    this.productService.postProducts(this.productForm.value).subscribe(res => {
+      console.log('res',res)
+    });
   }
 }
