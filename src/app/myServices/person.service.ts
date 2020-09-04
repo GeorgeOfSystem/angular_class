@@ -21,10 +21,10 @@ address : string = 'https://electionss-test.firebaseio.com/persons.json';
   }
 
   public deletePerson(id: any): Observable<any> {
-    return this.http.delete(`https://electionss-test.firebaseio.com/persons/%7bid%7d`);
+    return this.http.delete(`https://electionss-test.firebaseio.com/persons/${id}.json`);
   }
 
   public updatePerson(id: any, person: any): Observable<any> {
-    return this.http.put(`https://electionss-test.firebaseio.com/persons/%7bid%7d`, person);
+    return this.http.put(`https://electionss-test.firebaseio.com/persons/${id}.json`, PaymentResponse);
   }
 }

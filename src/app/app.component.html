@@ -5,8 +5,7 @@
     <form [formGroup]="productForm" style="display: flex; flex-direction: column; padding: 20px;">
 
       <mat-form-field>
-        <mat-label>Nombre</mat-label>
-        <input matInput formControlName="name" type="text">
+        <input matInput formControlName="name"  type="text">
       </mat-form-field>
 
       <div *ngIf="productForm.get('name').invalid &&
@@ -22,15 +21,12 @@
       </div>
 
       <mat-form-field>
-        <mat-label>Edad</mat-label>
         <input matInput formControlName="age" type="text">
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Habilitado</mat-label>
         <input matInput formControlName="enable" type="text">
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Url Imagen</mat-label>
         <input matInput formControlName="urlImage" type="text">
       </mat-form-field>
 

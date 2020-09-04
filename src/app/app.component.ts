@@ -47,13 +47,14 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onDelete(id: any): void {
+    console.log('id: ', id);
     this.personDeleteSubs = this.personService.deletePerson(id).subscribe(
       res => {
         console.log('RESPONSE: ', res);
         this.loadProduct();
       },
       err => {
-        console.log('ERROR: ');
+        console.log('ERROR: ', err);
       }
     );
   }
