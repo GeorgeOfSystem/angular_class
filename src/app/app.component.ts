@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
       name: ['name', [Validators.required, Validators.minLength(3)]],
       urlImage: '',
       age: '',
-      enable: ''
+      enable: ['', Validators.required]
     });
 
   }

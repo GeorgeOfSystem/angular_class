@@ -26,6 +26,16 @@
       <mat-form-field>
         <input matInput formControlName="enable" type="text">
       </mat-form-field>
+
+      <div *ngIf="productForm.get('enable').invalid &&
+              (productForm.get('enable').touched ||
+              productForm.get('enable').dirty)"
+           class="alert alert-danger">
+        <div *ngIf="productForm.get('enable').errors.required">
+          Este campo es obligatorio 
+        </div>
+      </div>
+
       <mat-form-field>
         <input matInput formControlName="urlImage" type="text">
       </mat-form-field>
