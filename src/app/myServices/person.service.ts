@@ -12,19 +12,19 @@ address : string = 'https://electionss-test.firebaseio.com/persons.json';
 
    }
   
-  public getProducts(): Observable<any> {
+  public getPerson(): Observable<any> {
     return this.http.get(this.address);
   }
 
-  public addProduct(product: any): Observable<any> {
-    return this.http.post(this.address, product);
+  public addPerson(person: any): Observable<any> {
+    return this.http.post(this.address, person);
   }
 
-  public deleteProduct(id: any): Observable<any> {
+  public deletePerson(id: any): Observable<any> {
     return this.http.delete(`https://electionss-test.firebaseio.com/persons/%7bid%7d`);
   }
 
-  public updateProduct(id: any, product: any): Observable<any> {
-    return this.http.put(`https://electionss-test.firebaseio.com/persons/%7bid%7d`, product);
+  public updatePerson(id: any, person: any): Observable<any> {
+    return this.http.put(`https://electionss-test.firebaseio.com/persons/%7bid%7d`, person);
   }
 }

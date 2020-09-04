@@ -1,0 +1,127 @@
+<mat-drawer-container autosize style="width: 100%; height: 600px;" [ngStyle]="{'background':'skyblue'}">
+
+  <mat-drawer #drawer style="width: 300px; height: 100%;" mode="side" [position]="'end'">
+
+    <form [formGroup]="productForm" style="display: flex; flex-direction: column; padding: 20px;">
+
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" type="text">
+      </mat-form-field>
+
+      <div *ngIf="productForm.get('name').invalid &&
+              (productForm.get('name').touched ||
+              productForm.get('name').dirty)"
+           class="alert alert-danger">
+        <div *ngIf="productForm.get('name').errors.required">
+          Es obligatorio el nombre
+        </div>
+        <div *ngIf="productForm.get('name').errors.minlength">
+          El largo debe ser más de 3 caracteres
+        </div>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Edad</mat-label>
+        <input matInput formControlName="age" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Habilitado</mat-label>
+        <input matInput formControlName="enable" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Url Imagen</mat-label>
+        <input matInput formControlName="urlImage" type="text">
+      </mat-form-field>
+
+    </form>
+    <button (click)="onEnviar2()">Create</button>
+    <button (click)="onUpdateProduct()">Update</button>
+
+  </mat-drawer>
+
+  Mayores a 65
+  <div class="row">
+  <div *ngFor="let person of products">
+    <div *ngIf="person.age >= 65"
+         class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+         style="padding: 50px; display: flex; justify-content: center;">
+
+      <div >
+      <div *ngIf="person.enable" [ngStyle]="{'background':'orange'}">
+        <mat-card class="example-card" >
+        <mat-card-header >
+          <mat-card-title>Nombre: {{person.name|uppercase}}</mat-card-title>
+          <mat-card-subtitle>Edad: {{person.age}} años</mat-card-subtitle>
+          <mat-card-subtitle>Habilitado: {{person.enable}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="person.urlImage" alt="Photo of a Person">
+        <mat-card-actions>
+          <button mat-button (click)="onEdit(person); drawer.toggle()">Edit</button>
+          <button mat-button (click)="onDelete(person.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+      </div>
+
+      <div *ngIf="!person.enable" [ngStyle]="{'background':'red'}">
+        <mat-card class="example-card" >
+        <mat-card-header >
+          <mat-card-title>Nombre: {{person.name|uppercase}}</mat-card-title>
+          <mat-card-subtitle>Edad: {{person.age}} años</mat-card-subtitle>
+          <mat-card-subtitle>Habilitado: {{person.enable}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="person.urlImage" alt="Photo of a Person">
+        <mat-card-actions>
+          <button mat-button (click)="onEdit(person); drawer.toggle()">Edit</button>
+          <button mat-button (click)="onDelete(person.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+  Menores a 65
+  <div class="row">
+  <div *ngFor="let person of products">
+    <div *ngIf="person.age < 65"
+         class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+         style="padding: 50px; display: flex; justify-content: center;">
+
+      <div >
+      <div *ngIf="person.enable" [ngStyle]="{'background':'orange'}">
+        <mat-card class="example-card" >
+        <mat-card-header >
+          <mat-card-title>Nombre: {{person.name|uppercase}}</mat-card-title>
+          <mat-card-subtitle>Edad: {{person.age}} años</mat-card-subtitle>
+          <mat-card-subtitle>Habilitado: {{person.enable}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="person.urlImage" alt="Photo of a Person">
+        <mat-card-actions>
+          <button mat-button (click)="onEdit(person); drawer.toggle()">Edit</button>
+          <button mat-button (click)="onDelete(person.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+      </div>
+
+      <div *ngIf="!person.enable" [ngStyle]="{'background':'red'}">
+        <mat-card class="example-card" >
+        <mat-card-header >
+          <mat-card-title>Nombre: {{person.name|uppercase}}</mat-card-title>
+          <mat-card-subtitle>Edad: {{person.age}} años</mat-card-subtitle>
+          <mat-card-subtitle>Habilitado: {{person.enable}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="person.urlImage" alt="Photo of a Person">
+        <mat-card-actions>
+          <button mat-button (click)="onEdit(person); drawer.toggle()">Edit</button>
+          <button mat-button (click)="onDelete(person.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</mat-drawer-container>
