@@ -1,38 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { PersonService } from './myServices/person.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'angular-class';
-  stock=0;
-  data =[
-  {nombre: "polera", talla: 13, stock: 12, tipo: "calor"},
-  {nombre: "camisa", talla : 54, stock: 22, tipo: "frio"},
-  {nombre: "jeans", talla : 78, stock: 0, tipo: "calor"},
-  {nombre: "corto", talla : 90, stock: 44, tipo: "calor"},
-  {nombre: "buso", talla : 56, stock: 0, tipo: "frio"},
-  {nombre: "blusa", talla : 33, stock: 50, tipo: "frio"},
-  {nombre: "chompa", talla : 10, stock: 5, tipo: "calor"},
-  {nombre: "bozer", talla : 34, stock: 1, tipo: "frio"},
-  {nombre: "blusa", talla : 5, stock: 2, tipo: "calor"},
-  {nombre: "guantes", talla : 75, stock: 5, tipo: "calor"}
-  ];
-  hot = this.data.filter(s=>s.tipo=='calor');
-  cold = this.data.filter(s=>s.tipo=='frio');
+export class AppComponent implements OnInit, OnDestroy {
+  
+   products = [];
 
-  ngOnInit(){
-    for(let product of this.data){
-      this.stock += product.stock;
-    }
+  personSubs: Subscription;
+
+  constructor(private personService: PersonService) {
+
   }
 
-  buy(product){
-    if(product.stock!=0){
-      product.stock--;
-      this.stock--;
-    }
+  ngOnInit(): void {
+    this.personSubs = this.personService.getProducts().subscribe(res => {
+      console.log('RESPUESTA: ', res);
+      console.log('RESPUESTA: ', Object.entries(res));
+
+      Object.entries(res).map(p => this.products.push(p[1]));
+
+    });
+
+  }
+
+  ngOnDestroy(): void {
+    this.productSubs ? this.productSubs.unsubscribe() : '';
   }
 }
