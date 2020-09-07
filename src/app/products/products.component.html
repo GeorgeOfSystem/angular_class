@@ -1,6 +1,0 @@
-<div [ngStyle]="{'background': stock!=0 ? 'orange' : 'red'}">
-  <p>Nombre:{{name | uppercase}}</p>
-  <p>Talla:{{size | size}}</p>
-  <p>Stock:{{stock}}</p>
-  <button [ngStyle]="{'background':'skyblue'}" [disabled]="stock==0" (click)="buy()">Comprar</button>
-</div>

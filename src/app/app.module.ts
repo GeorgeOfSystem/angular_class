@@ -13,30 +13,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { PersonService } from './myServices/person.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatSliderModule,
-    MatIconModule,
     CommonModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatCardModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule
-  ],
-   providers:[
-    PersonService
   ],
   bootstrap: [AppComponent]
 })
