@@ -25,10 +25,7 @@ import { VotacionModule } from './votacion/votacion.module';
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule,
-    RoutingModule,
-    JuradosModule,
-    VotacionModule
+    CommonModule
   ],
   bootstrap: [AppComponent]
 })
