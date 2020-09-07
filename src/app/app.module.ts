@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SizePipePipe } from './size-pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
@@ -14,6 +13,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RoutingModule } from './routing.module';
+import { JuradosModule } from './jurados/jurados.module';
+import { VotacionModule } from './votacion/votacion.module';
 
 
 @NgModule({
@@ -22,8 +24,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   ],
   imports: [
     BrowserModule,
-    FormsM
+    FormsModule,
     CommonModule,
+    RoutingModule,
+    JuradosModule,
+    VotacionModule
   ],
   bootstrap: [AppComponent]
 })
