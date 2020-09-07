@@ -13,9 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { RoutingModule } from './routing.module';
-import { JuradosModule } from './jurados/jurados.module';
-import { VotacionModule } from './votacion/votacion.module';
 
 
 @NgModule({
@@ -25,7 +22,8 @@ import { VotacionModule } from './votacion/votacion.module';
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    
   ],
   bootstrap: [AppComponent]
 })
