@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   ],
   imports: [
     BrowserModule,
+    FormsM
     CommonModule,
   ],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ export class Votacion1Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
