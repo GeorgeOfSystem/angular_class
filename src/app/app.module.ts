@@ -14,6 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
+import { JuradosModule } from './jurados/jurados.module';
+import { VotacionModule } from './votacion/votacion.module';
+import { LugarModule } from './lugar/lugar.module';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JuradosModule,
+    VotacionModule,
+    LugarModule
     
   ],
   bootstrap: [AppComponent]

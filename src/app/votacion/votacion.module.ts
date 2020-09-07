@@ -7,11 +7,11 @@ import { VotacionRoutingModule } from './votacion-routing.module';
 
 @NgModule({
   declarations: [
-    Votacion1Component,
-    VotacionRoutingModule
+    Votacion1Component
     ],
   imports: [
-    CommonModule
+    CommonModule,
+    VotacionRoutingModule
   ]
 })
 export class VotacionModule { }

@@ -8,10 +8,10 @@ import { JuradosRoutingModule } from './jurados-routing.module';
 @NgModule({
   declarations: [
     Jurados1Component,
-    JuradosRoutingModule
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    JuradosRoutingModule
   ]
 })
 export class JuradosModule { }
