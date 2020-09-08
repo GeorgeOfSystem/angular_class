@@ -6,7 +6,10 @@ import { Shared2Directive } from './shared2.directive';
 
 
 @NgModule({
-  declarations: [Shared1Component, Shared2Directive],
+  declarations: [
+    Shared1Component, 
+    Shared2Directive
+    ],
   imports: [
     CommonModule
   ]

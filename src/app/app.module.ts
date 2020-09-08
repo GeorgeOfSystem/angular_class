@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { JuradosModule } from './jurados/jurados.module';
 import { VotacionModule } from './votacion/votacion.module';
 import { LugarComponent } from './lugar/lugar.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LugarComponent } from './lugar/lugar.component';
     AppRoutingModule,
     JuradosModule,
     VotacionModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })
