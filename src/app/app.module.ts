@@ -16,12 +16,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { JuradosModule } from './jurados/jurados.module';
 import { VotacionModule } from './votacion/votacion.module';
-import { LugarModule } from './lugar/lugar.module';
+import { LugarComponent } from './lugar/lugar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LugarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +31,6 @@ import { LugarModule } from './lugar/lugar.module';
     AppRoutingModule,
     JuradosModule,
     VotacionModule,
-    LugarModule
-    
   ],
   bootstrap: [AppComponent]
 })
