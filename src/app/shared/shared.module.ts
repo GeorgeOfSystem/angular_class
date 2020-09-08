@@ -14,4 +14,6 @@ import { Shared2Directive } from './shared2.directive';
     CommonModule
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+  
+}
