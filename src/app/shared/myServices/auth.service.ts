@@ -10,7 +10,7 @@ export class AuthService {
   }
 
   public login(body: any): Observable<any> {
-    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCzqD6Ghgj5JYaIb1V6eJggXeiZdNxTQEA', body);
+    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxXk8yPBuhrTmeOqTJz-qn8nxI1fRYveg', body);
   }
 
 }
