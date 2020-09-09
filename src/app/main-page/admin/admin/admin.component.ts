@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ProductService } from '../../../myServices/product.service';
 import { Subscription } from 'rxjs';
+import { ProductService } from '../../../shared/myServices/product.service';
 
 @Component({
   selector: 'app-admin',

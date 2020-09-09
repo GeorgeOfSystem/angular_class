@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from '../../../myServices/product.service';
 import { Subscription } from 'rxjs';
+import { ProductService } from '../../../shared/myServices/product.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   productSubs: Subscription;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService ) {
 
   }
 
