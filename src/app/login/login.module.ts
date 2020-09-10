@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginRoutingModule } from './login-routing.module';
-import { LoginComponent } from './login/login.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,8 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { myNgElseDirective } from '../shared/myDirectives/ng-else.directive';
 import { AuthService } from '../shared/myServices/auth.service';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login.component';
 
-
+const routes: Routes = [
+  { path: '', component: LoginComponent}
+];
 
 @NgModule({
   declarations: [
@@ -22,12 +25,12 @@ import { AuthService } from '../shared/myServices/auth.service';
   imports: [
     FormsModule,
     CommonModule,
-    LoginRoutingModule,
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forChild(routes)
   ],
   providers: [
     AuthService
