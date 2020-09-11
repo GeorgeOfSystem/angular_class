@@ -1,19 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatIconModule} from '@angular/material/icon';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthInterceptor } from './shared/myInterceptors/auth.interceptor';
-import { AuthGuard } from './shared/myGuards/auth.guard';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule, Routes} from '@angular/router';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './shared/interceptors/auth.interceptor';
+import {AuthGuard} from './shared/guards/auth.guard';
+import {AuthService} from './shared/services/auth.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
-  {path: 'pages', loadChildren: () => import('./main-page/main-page.module').then(m => m.MainPageModule)}
+  {
+    path: 'pages',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
@@ -27,6 +29,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
+    AuthService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
@@ -36,6 +39,6 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
 
+export class AppModule {
 }
