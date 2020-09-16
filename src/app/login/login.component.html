@@ -1,45 +1,69 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>LOGIN</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form #form="ngForm" style="display: flex; flex-direction: column;">
+<header class="intro-header">
+  <div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTI4znI5_3_HWXMcuW4ShL4CwBdUQwD0WuumA&usqp=CAU);">
+    <div class="full-bg-img mask rgba-black-light">
+      <div class="container flex-center">
+        <div class="row pt-5 mt-3 w-100">
+          <div class="col-md-12">
+            <div class="text-center">
+              
+              <h2 class="h1 h1-reponsive white-text font-up font-bold mb-3 wow fadeInDown" data-wow-delay="0.3s">
+                <strong>  George´s Website</strong>
+              </h2>
 
-      <mat-form-field>
-        <mat-label>E-mail</mat-label>
-        <input matInput
-               type="text"
-               name="email"
-               ngModel
-               #emailUI="ngModel"
-               required>
-        <div *ngIf="emailUI.invalid && (emailUI.touched || emailUI.dirty)"
-             class="alert alert-danger">
-          <div *ngIf="emailUI.errors.required">
-            Name is required
+              <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+                <h5 class="font-up mb-5 white-text wow fadeInDown" data-wow-delay="0.4s">
+                  <strong style="color: orange" >Angular Project: Pedidos YA</strong>
+                </h5>
+                
+                
+                <mat-card style="background-color: rgb(89, 41, 121);" class="example-card-center">
+                  <mat-card-header>
+                    <mat-card-title style="color: orange">LOGIN</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <form #form="ngForm" style="display: flex; flex-direction: column;">
+
+                      <mat-form-field>
+                        <mat-label style="color: yellow">E-mail</mat-label>
+                        <input matInput
+                              type="text"
+                              name="email"
+                              ngModel
+                              #emailUI="ngModel"
+                              required>
+                        <div *ngIf="emailUI.invalid && (emailUI.touched || emailUI.dirty)"
+                            class="alert alert-danger">
+                          <div *ngIf="emailUI.errors.required">
+                            Name is required
+                          </div>
+                        </div>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label style="color: yellow" >Password</mat-label>
+                        <input matInput
+                              type="password"
+                              name="password"
+                              ngModel
+                              #passwordUI="ngModel"
+                              required>
+                        <div *ngIf="passwordUI.invalid && (passwordUI.touched || passwordUI.dirty)"
+                            class="alert alert-danger">
+                          <div *ngIf="passwordUI.errors.required">
+                            Name is required
+                          </div>
+                        </div>
+                      </mat-form-field>
+
+                    </form>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button style="color: white" mat-button [disabled]="form.invalid" (click)="onLogin(form)">Login</button>
+                  </mat-card-actions>
+                </mat-card> 
+            </div>
           </div>
         </div>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput
-               type="password"
-               name="password"
-               ngModel
-               #passwordUI="ngModel"
-               required>
-        <div *ngIf="passwordUI.invalid && (passwordUI.touched || passwordUI.dirty)"
-             class="alert alert-danger">
-          <div *ngIf="passwordUI.errors.required">
-            Name is required
-          </div>
-        </div>
-      </mat-form-field>
-
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button [disabled]="form.invalid" (click)="onLogin(form)">Login</button>
-  </mat-card-actions>
-</mat-card>
-
+      </div>
+    </div>
+  </div>
+</header>
