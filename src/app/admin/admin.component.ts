@@ -37,7 +37,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.homeSubs = this.store.select(s => s.home).subscribe(res => {
       this.cart = Object.assign([], res.items);
-      
+      console.log('res',res.items)
     });
 
     this.loadProduct();
@@ -57,6 +57,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.products = [];
     this.productsNational = [];
     this.productsInternational = [];
+    this.national;
     //const userId = this.authService.getUserId();
     this.productGetSubs = this.productService.getProducts().subscribe(res => {
       Object.entries(res).map((p: any) => this.products.push({id: p[0], ...p[1]}));
