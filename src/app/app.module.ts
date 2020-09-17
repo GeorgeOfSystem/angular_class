@@ -5,13 +5,14 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './shared/services/auth.service';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin', pathMatch: 'full'},
   {path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
   {
-    path: 'admin',loadChildren: () => import('./admin/admin.module').then(m => m.PagesModule)}
+    path: 'admin',loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)}
 ];
 
 @NgModule({
