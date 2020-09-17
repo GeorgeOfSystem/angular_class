@@ -36,8 +36,8 @@
         <input matInput formControlName="stock" type="text">
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Price</mat-label>
-        <input matInput formControlName="price" type="text">
+        <mat-label>Enable</mat-label>
+        <input matInput formControlName="enable" type="text">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Type</mat-label>
@@ -63,36 +63,61 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
+    <button type="button" mat-button (click)="drawer.toggle()" style="background-color:yellow">
+      Add
+    </button>
+    <button type="button" mat-button  style="background-color:yellow">
+      Report
     </button>
   </div>
-
+ <a style="background-color:blue"> Nacional </a>
   <div class="row">
-
     <div *ngFor="let product of products"
          class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
          style="padding: 50px; display: flex; justify-content: center;">
 
       <mat-card class="example-card" [ngStyle]="{'background': product.stock > 0 ? 'orange' : 'red' }">
         <mat-card-header>
-          <mat-card-title>{{product.name | uppercase }}</mat-card-title>
-          <mat-card-subtitle>{{product.stock}} </mat-card-subtitle>
+          <mat-card-title>Name: {{product.name | uppercase }}</mat-card-title>
+          <mat-card-subtitle>Stoack: {{product.stock}} </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="product.imageUrl" alt="Photo of a Shiba Inu">
+        <img mat-card-image [src]="product.urlImage" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <p>
-            {{product.description}}
+            Enable: {{product.enable | yesNo}}
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button *ngIf="product.stock>0" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
+          <button *ngIf="product.enable" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
           <button mat-button (click)="onDelete(product.id)">Delete</button>
         </mat-card-actions>
       </mat-card>
-
     </div>
-
   </div>
+
+<a style="background-color:blue"> Internacional </a>
+  <div class="row">
+      <div *ngFor="let product of productsInternational"
+          class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+          style="padding: 50px; display: flex; justify-content: center;">
+
+        <mat-card class="example-card" [ngStyle]="{'background': product.stock > 0 ? 'orange' : 'red' }">
+          <mat-card-header>
+            <mat-card-title>Name: {{product.name | uppercase }}</mat-card-title>
+            <mat-card-subtitle>Stoack: {{product.stock}} </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="product.urlImage" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              Enable: {{product.enable | yesNo}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button *ngIf="product.enable" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
+            <button mat-button (click)="onDelete(product.id)">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
 
 </mat-drawer-container>

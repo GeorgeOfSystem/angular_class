@@ -12,6 +12,8 @@ import { ProductService } from '../shared/services/product.service';
 export class AdminComponent implements OnInit, OnDestroy {
 
   products = [];
+  productsNational = [];
+  productsInternational = [];
 
   productForm: FormGroup;
 
@@ -35,18 +37,23 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.productForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       stock: '',
-      price: '',
+      enable: '',
       type: ['', [Validators.required]],
       urlImage:''
     });
 
   }
 
+
   loadProduct(): void {
     this.products = [];
-    const userId = this.authService.getUserId();
-    this.productGetSubs = this.productService.getProductsById(userId).subscribe(res => {
+    this.productsNational = [];
+    this.productsInternational = [];
+    //const userId = this.authService.getUserId();
+    this.productGetSubs = this.productService.getProducts().subscribe(res => {
       Object.entries(res).map((p: any) => this.products.push({id: p[0], ...p[1]}));
+      this.productsInternational = this.products.filter(s=>s.type=='internacional');
+      this.productsNational = this.products.filter(s=>s.type=='nacional');
     });
   }
 
@@ -101,7 +108,7 @@ export class AdminComponent implements OnInit, OnDestroy {
         console.log('ERROR DE SERVIDOR');
       }
     );
-
+    this.loadProduct();
   }
 
   ngOnDestroy(): void {

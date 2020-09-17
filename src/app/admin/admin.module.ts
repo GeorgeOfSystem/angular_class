@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductService } from '../shared/services/product.service';
+import { YesNoPipe } from '../shared/pipes/yes-no.pipe';
 
 const routes: Routes = [
   {path: '', component: AdminComponent}
@@ -28,6 +29,6 @@ const routes: Routes = [
   providers: [
     ProductService
   ],
-  declarations: [AdminComponent]
+  declarations: [AdminComponent,YesNoPipe]
 })
 export class AdminModule { }
