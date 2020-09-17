@@ -33,9 +33,9 @@ const routes: Routes = [
     BrowserAnimationsModule,
      RouterModule.forRoot(routes),
 
-    StoreModule.forRoot(reducers, {metaReducers}),
+    /*StoreModule.forRoot(reducers, {metaReducers}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({name: 'Angular Course', logOnly: environment.production})
+    StoreDevtoolsModule.instrument({name: 'Angular Course', logOnly: environment.production})*/
   ],
   providers: [AuthService,
     AuthGuard,
