@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: skyblue;
 }
 
 .example-card {
@@ -13,4 +14,8 @@
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+
+.mat-card{
+  background-color: orangered;
 }
