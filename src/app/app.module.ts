@@ -9,6 +9,10 @@ import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
+import {reducers} from './core';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 const routes: Routes = [
