@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../shared/services/auth.service';
 import { ProductService } from '../shared/services/product.service';
 import {Store} from '@ngrx/store';
+import { AddProduct } from './store/home.actions';
 
 @Component({
   selector: 'app-admin',
@@ -34,6 +35,10 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.homeSubs = this.store.select(s => s.home).subscribe(res => {
+      this.cart = Object.assign([], res.items);
+      
+    });
 
     this.loadProduct();
 
@@ -127,6 +132,7 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   onReport(product): void {
     this.store.dispatch(AddProduct({product: Object.assign({}, product)}));
+
   }
 
 }
