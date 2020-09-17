@@ -33,11 +33,11 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.loadProduct();
 
     this.productForm = this.formBuilder.group({
-      description: ['description', [Validators.required, Validators.minLength(3)]],
-      imageUrl: '',
-      ownerId: '',
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      stock: '',
       price: '',
-      title: ''
+      type: ['', [Validators.required]],
+      urlImage:''
     });
 
   }
@@ -109,6 +109,10 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.productGetSubs ? this.productGetSubs.unsubscribe() : '';
     this.productDeleteSubs ? this.productDeleteSubs.unsubscribe() : '';
     this.productUpdateSubs ? this.productUpdateSubs.unsubscribe() : '';
+  }
+
+   public onLogout(): void {
+    this.authService.logout();
   }
 
 }

@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProductService } from '../shared/services/product.service';
 
 const routes: Routes = [
   {path: '', component: AdminComponent}
@@ -23,6 +24,9 @@ const routes: Routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule
+  ],
+  providers: [
+    ProductService
   ],
   declarations: [AdminComponent]
 })
