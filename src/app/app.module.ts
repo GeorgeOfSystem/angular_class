@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { StoreModule } from '@ngrx/store';
 
 
 const routes: Routes = [
@@ -26,7 +27,11 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
+     RouterModule.forRoot(routes),
+
+    StoreModule.forRoot(reducers, {metaReducers}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({name: 'Angular Course', logOnly: environment.production})
   ],
   providers: [AuthService,
     AuthGuard,

@@ -86,7 +86,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
+          <button *ngIf="product.stock>0" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
           <button mat-button (click)="onDelete(product.id)">Delete</button>
         </mat-card-actions>
       </mat-card>
