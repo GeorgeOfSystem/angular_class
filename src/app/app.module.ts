@@ -14,6 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
+import {metaReducers} from './core/meta';
 
 
 const routes: Routes = [
@@ -34,9 +35,9 @@ const routes: Routes = [
     BrowserAnimationsModule,
      RouterModule.forRoot(routes),
 
-    /*StoreModule.forRoot(reducers, {metaReducers}),
+    StoreModule.forRoot(reducers, {metaReducers}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({name: 'Angular Course', logOnly: environment.production})*/
+    StoreDevtoolsModule.instrument({name: 'Angular Course', logOnly: environment.production})
   ],
   providers: [AuthService,
     AuthGuard,

@@ -38,7 +38,7 @@ export class AdminComponent implements OnInit, OnDestroy {
       name: ['', [Validators.required, Validators.minLength(3)]],
       stock: '',
       enable: '',
-      type: ['', [Validators.required]],
+      type: ['Nacional - Internacional', [Validators.required]],
       urlImage:''
     });
 
