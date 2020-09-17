@@ -122,4 +122,8 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.authService.logout();
   }
 
+  onReport(product): void {
+    this.store.dispatch(AddProduct({product: Object.assign({}, product)}));
+  }
+
 }

@@ -66,10 +66,35 @@
     <button type="button" mat-button (click)="drawer.toggle()" style="background-color:yellow">
       Add
     </button>
-    <button type="button" mat-button  style="background-color:yellow">
+    <button type="button" mat-button (click)="drawer.toggle()">
       Report
     </button>
   </div>
+  
+
+  <mat-drawer-container autosize style="width: 100%; height: 600px;">
+
+  <mat-drawer #drawer style="width: 600px; height: 100%;" mode="side" [position]="'end'">
+
+    <table>
+      <tr>
+        <td>NAME</td>
+        <td>PRICE</td>
+        <td>DESCRIPTION</td>
+      </tr>
+
+      <tr *ngFor="let product of cart">
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.description}}</td>
+      </tr>
+    </table>
+
+  </mat-drawer>
+
+
+
+
  <a style="background-color:blue"> Nacional </a>
   <div class="row">
     <div *ngFor="let product of products"
