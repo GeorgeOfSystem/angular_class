@@ -5,11 +5,11 @@
 export const environment = {
   production: false,
   app: {
-    apiBaseUrl: ''
+    apiBaseUrl: 'https://super-ticket-test.firebaseio.com'
   },
   auth: {
     apiBaseUrl: 'https://identitytoolkit.googleapis.com',
-    key: ''
+    key: 'AIzaSyBDLCRps3Cn9XTj8LEvgc2bkNkmHX4dYwo'
   }
 };
 
