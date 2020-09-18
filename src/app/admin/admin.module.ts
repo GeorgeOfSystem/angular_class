@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductService } from '../shared/services/product.service';
 import { YesNoPipe } from '../shared/pipes/yes-no.pipe';
+import { HeaderSuperTicketsComponent } from './components/header-super-tickets/header-super-tickets.component';
 
 const routes: Routes = [
   {path: '', component: AdminComponent}
@@ -24,11 +25,12 @@ const routes: Routes = [
     MatSidenavModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [
     ProductService
   ],
-  declarations: [AdminComponent,YesNoPipe]
+  declarations: [AdminComponent,YesNoPipe, HeaderSuperTicketsComponent]
 })
 export class AdminModule { }

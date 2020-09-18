@@ -13,6 +13,7 @@ import { AddProduct } from './store/home.actions';
 })
 export class AdminComponent implements OnInit, OnDestroy {
 
+  search='';
   products = [];
   productsNational = [];
   productsInternational = [];
@@ -57,12 +58,12 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.products = [];
     this.productsNational = [];
     this.productsInternational = [];
-    this.national;
     //const userId = this.authService.getUserId();
     this.productGetSubs = this.productService.getProducts().subscribe(res => {
       Object.entries(res).map((p: any) => this.products.push({id: p[0], ...p[1]}));
-      this.productsInternational = this.products.filter(s=>s.type=='internacional');
-      this.productsNational = this.products.filter(s=>s.type=='nacional');
+      //this.onSearch2('internacional',this.products);
+      this.productsInternational = this.onSearch2('internacional',this.products);
+      this.productsNational = this.onSearch2('nacional',this.products);
     });
   }
 
@@ -127,13 +128,39 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.productUpdateSubs ? this.productUpdateSubs.unsubscribe() : '';
   }
 
-   public onLogout(): void {
-    this.authService.logout();
-  }
-
   onReport(product): void {
     this.store.dispatch(AddProduct({product: Object.assign({}, product)}));
 
+  }
+
+  onSearch2( type : string, product : any[] ): any[] {
+    const prod = product.filter(s=>s.type==type);
+    if(this.search.length>0){
+      const arr = [];
+      for(let index in prod){
+        var i = 0;
+        const name = prod[index].name;
+        console.log('slice',name.slice(i,i+this.search.length));
+        while( i + this.search.length <= name.length){
+          console.log('slice',name.slice(i,i+this.search.length));
+        }
+
+
+        /*for(let i in name){
+          if(name[i] == this.search){
+            arr.push(prod[index]);
+            break;
+          }
+        }*/
+      }
+      return arr;
+    }else{
+      return prod;
+    }
+  }
+
+  onSearch(){
+    this.loadProduct();
   }
 
 }
