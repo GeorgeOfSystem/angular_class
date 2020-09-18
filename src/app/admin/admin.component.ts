@@ -149,9 +149,4 @@ export class AdminComponent implements OnInit, OnDestroy {
       return prod;
     }
   }
-
-  onSearch(){
-    this.loadProduct();
-  }
-
 }
