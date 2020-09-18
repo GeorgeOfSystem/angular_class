@@ -10,8 +10,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductService } from '../shared/services/product.service';
 import { YesNoPipe } from '../shared/pipes/yes-no.pipe';
-import { HeaderSuperTicketsComponent } from './components/header-super-tickets/header-super-tickets.component';
-import { ConcertCardComponent } from './components/concert-card/concert-card.component';
+import { HeaderSuperTicketsComponent } from './components/header-super-tickets.component';
+import { ConcertCardComponent } from './components/concert-card.component';
+
 
 
 const routes: Routes = [
@@ -33,6 +34,9 @@ const routes: Routes = [
   providers: [
     ProductService
   ],
-  declarations: [AdminComponent,YesNoPipe, HeaderSuperTicketsComponent, ConcertCardComponent]
+  declarations: [AdminComponent,
+  YesNoPipe, 
+  HeaderSuperTicketsComponent, 
+  ConcertCardComponent]
 })
 export class AdminModule { }
