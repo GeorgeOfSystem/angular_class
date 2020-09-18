@@ -139,19 +139,9 @@ export class AdminComponent implements OnInit, OnDestroy {
       const arr = [];
       for(let index in prod){
         var i = 0;
-        const name = prod[index].name;
-        console.log('slice',name.slice(i,i+this.search.length));
-        /*while( i + this.search.length < name.length){
-          console.log('slice',name.slice(i,i+this.search.length));
-          i++;
-        }*/
-
-
-        for(let i in name){
-          if(name[i] == this.search){
-            arr.push(prod[index]);
-            break;
-          }
+        const name = prod[index].name.toLowerCase();
+        if(name.indexOf(this.search.toLowerCase())>-1 ){
+          arr.push(prod[index]);
         }
       }
       return arr;
