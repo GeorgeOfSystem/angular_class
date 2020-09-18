@@ -27,7 +27,6 @@ export class AdminComponent implements OnInit, OnDestroy {
   productUpdateSubs: Subscription;
   idEdit: any;
 
-  // nameControl = new FormControl();
 
   constructor(private store: Store<any>,
               private formBuilder: FormBuilder,

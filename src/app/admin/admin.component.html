@@ -69,27 +69,13 @@
   <mat-drawer-container autosize style="width: 100%; height: 600px;">
 
  <a style="background-color:blue"> Nacional </a>
+
   <div class="row">
     <div *ngFor="let product of productsNational"
          class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
          style="padding: 50px; display: flex; justify-content: center;">
-
-      <mat-card class="example-card" [ngStyle]="{'background': product.stock > 0 ? 'orange' : 'red' }">
-        <mat-card-header>
-          <mat-card-title>Name: {{product.name | uppercase }}</mat-card-title>
-          <mat-card-subtitle>Stoack: {{product.stock}} </mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="product.urlImage" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            Enable: {{product.enable | yesNo}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button *ngIf="product.enable" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
-          <button mat-button (click)="onDelete(product.id)">Delete</button>
-        </mat-card-actions>
-      </mat-card>
+      <concert [name]="product.name" [stock]="product.stock" [enable]="product.enable" [type]="product.type" [urlImage]="product.urlImage" (edit)="onEdit(product); drawer.toggle()" (delete)="onDelete(product.id)" >
+      </concert>
     </div>
   </div>
 
@@ -98,23 +84,8 @@
       <div *ngFor="let product of productsInternational"
           class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
           style="padding: 50px; display: flex; justify-content: center;">
-
-        <mat-card class="example-card" [ngStyle]="{'background': product.stock > 0 ? 'orange' : 'red' }">
-          <mat-card-header>
-            <mat-card-title>Name: {{product.name | uppercase }}</mat-card-title>
-            <mat-card-subtitle>Stoack: {{product.stock}} </mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image [src]="product.urlImage" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p>
-              Enable: {{product.enable | yesNo}}
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button *ngIf="product.enable" mat-button (click)="onEdit(product); drawer.toggle()">Edit</button>
-            <button mat-button (click)="onDelete(product.id)">Delete</button>
-          </mat-card-actions>
-        </mat-card>
+        <concert [name]="product.name" [stock]="product.stock" [enable]="product.enable" [type]="product.type" [urlImage]="product.urlImage" (edit)="onEdit(product); drawer.toggle()" (delete)="onDelete(product.id)" >
+      </concert>
       </div>
     </div>
 
