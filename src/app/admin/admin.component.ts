@@ -141,18 +141,18 @@ export class AdminComponent implements OnInit, OnDestroy {
         var i = 0;
         const name = prod[index].name;
         console.log('slice',name.slice(i,i+this.search.length));
-        while( i + this.search.length <= name.length){
+        /*while( i + this.search.length < name.length){
           console.log('slice',name.slice(i,i+this.search.length));
           i++;
-        }
+        }*/
 
 
-        /*for(let i in name){
+        for(let i in name){
           if(name[i] == this.search){
             arr.push(prod[index]);
             break;
           }
-        }*/
+        }
       }
       return arr;
     }else{
